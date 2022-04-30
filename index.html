@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js" defer></script>
     <title>LVEC Library</title>
 </head>
 <body>
-    
+    <div class="hero">
+        The LVEC Library
+    </div>
+    <div class="sidebar">
+        <div class="bookbutton"><button class="newbook">Add a book</button></div>
+        <form action="javascript:addBook()" class="book-add">
+            <fieldset class="book-form">
+                <legend>Add a book:</legend>
+                <label for="title" class="formlabel">Title:</label>
+                <input type="text" name="title" id="book-title">
+                <label for="author" class="formlabel">Author:</label>
+                <input type="text" name="author" id="book-author">
+                <label for="pages" class="formlabel">Pages:</label>
+                <input type="number" name="pages" id="book-pages">
+                <span class="read-check">
+                    <input type="checkbox" name="read" id="book-read">
+                    <label for="read" class="readlabel">I have read this book.</label>
+                </span>
+                <input type="submit" value="Add this book" class="add-book-button">
+            </fieldset>
+        </form>
+    </div>
+    <div class="library">
+        <div class="navbar">
+            Books:
+        </div>
+        <div class="catalog">
+
+        </div>
+    </div>
+    <div class="footer">
+        Brought to you by the LVEC Library
+    </div>
 </body>
 </html>
