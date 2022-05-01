@@ -32,4 +32,25 @@ function addBook() {
     hasRead= (document.getElementById("book-read").value==="on") ? true : false;
     newBook = new Book(title,author,pages,hasRead);
     myLibrary.push(newBook);
+    makeCatalog();
+}
+
+function makeCard(Book,index) {
+    let div = document.createElement('div');
+    div.classList.add("card");
+    div.innerHTML=`<p class="title">${Book.title}</p><p>Author: ${Book.author}</p><p>Pages: ${Book.pages}</p>`
+    div.setAttribute("data-index",index);
+    return div;
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+function makeCatalog() {
+    let catalog=document.querySelector(".catalog");
+    removeAllChildNodes(catalog);
+    myLibrary.forEach((element,index) => {catalog.appendChild(makeCard(element,index))});
 }
