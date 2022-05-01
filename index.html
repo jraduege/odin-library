@@ -12,31 +12,35 @@
     <div class="hero">
         The LVEC Library
     </div>
-    <div class="sidebar">
-        <div class="bookbutton"><button class="newbook">Add a book</button></div>
-        <form action="javascript:addBook()" class="book-add">
-            <fieldset class="book-form">
-                <legend>Add a book:</legend>
-                <label for="title" class="formlabel">Title:</label>
-                <input type="text" name="title" id="book-title">
-                <label for="author" class="formlabel">Author:</label>
-                <input type="text" name="author" id="book-author">
-                <label for="pages" class="formlabel">Pages:</label>
-                <input type="number" name="pages" id="book-pages">
-                <span class="read-check">
-                    <input type="checkbox" name="read" id="book-read">
-                    <label for="read" class="readlabel">I have read this book.</label>
-                </span>
-                <input type="submit" value="Add this book" class="add-book-button">
-            </fieldset>
-        </form>
-    </div>
-    <div class="library">
-        <div class="navbar">
-            Books:
+    <div class="middle">
+        <div class="sidebar">
+            <div class="bookbutton">
+                <button class="newbook">Add a book</button>
+                <img class="collapse hidden" src="./arrow-collapse-left.svg" alt="Collapse Left">
+            </div>
+            <form action="javascript:addBook()" class="book-add hidden">
+                <fieldset class="book-form">
+                    <legend>Add a book:</legend>
+                    <label for="title" class="formlabel">Title:</label>
+                    <input type="text" name="title" id="book-title">
+                    <label for="author" class="formlabel">Author:</label>
+                    <input type="text" name="author" id="book-author">
+                    <label for="pages" class="formlabel">Pages:</label>
+                    <input type="number" name="pages" id="book-pages">
+                    <span class="read-check">
+                        <input type="checkbox" name="read" id="book-read">
+                        <label for="read" class="readlabel">I have read this book.</label>
+                    </span>
+                    <input type="submit" value="Add this book" class="add-book-button">
+                </fieldset>
+            </form>
         </div>
-        <div class="catalog">
-
+        <div class="library">
+            <div class="navbar">
+                Books:
+            </div>
+            <div class="catalog">
+            </div>
         </div>
     </div>
     <div class="footer">
