@@ -106,3 +106,15 @@ body {
     text-align: center;
   }
 
+.card-button-bar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.remove-button {
+    background:tomato;
+}
+
+.toggle-read {
+    background:lightblue;
+}
