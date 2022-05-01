@@ -5,6 +5,9 @@ function Book(title,author,pages,hasRead) {
     this.author=author;
     this.pages=pages;
     this.hasRead=hasRead;
+    this.toggleRead = function() {
+        this.hasRead = (this.hasRead) ? false : true;
+    }
 }
 
 const collapseButton = document.querySelector(".collapse")
@@ -62,4 +65,22 @@ function makeCatalog() {
     let catalog=document.querySelector(".catalog");
     removeAllChildNodes(catalog);
     myLibrary.forEach((element,index) => {catalog.appendChild(makeCard(element,index))});
+    document.querySelectorAll(".toggle-read").forEach(item => {
+        item.addEventListener("click", handleToggleRead);
+    })
+    document.querySelectorAll(".remove-button").forEach(item => {
+        item.addEventListener("click",handleRemove);
+    })
+}
+
+function handleToggleRead(e) {
+    let index=e.target.getAttribute("data-index");
+    myLibrary[index].toggleRead();
+    makeCatalog();
+}
+
+function handleRemove(e) {
+    let index=e.target.getAttribute("data-index");
+    myLibrary.splice(index,1);
+    makeCatalog();
 }
